@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Wordmark } from "./Logo";
+import { AnimatedLogo } from "./AnimatedLogo";
 import { Button } from "./ui/Button";
 
 const navLinks = [
@@ -40,12 +40,7 @@ export function Header() {
           }`}
         >
           <a href="/" className="flex items-center gap-3 transition-all duration-500">
-            <Image
-              src="/logo-animated.gif"
-              alt="GroupFound"
-              width={80}
-              height={80}
-              unoptimized
+            <AnimatedLogo
               className={`transition-all duration-500 ease-in-out ${
                 scrolled ? "w-9 h-9" : "w-16 h-16 md:w-20 md:h-20"
               }`}
