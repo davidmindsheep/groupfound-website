@@ -68,9 +68,9 @@ export function Logo({ className = "" }: { className?: string }) {
   );
 }
 
-export function Wordmark({ className = "" }: { className?: string }) {
+export function Wordmark({ className = "text-xl" }: { className?: string }) {
   return (
-    <span className={`text-xl font-sans tracking-tight ${className}`}>
+    <span className={`font-sans tracking-tight ${className}`}>
       <span className="font-bold text-foreground">group</span>
       <span className="font-light text-foreground-secondary">found</span>
     </span>

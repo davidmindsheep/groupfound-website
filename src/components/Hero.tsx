@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-36">
       {/* Background orbs */}
       <div className="gradient-orb gradient-orb-orange w-[600px] h-[600px] -top-40 -right-40 absolute" />
       <div className="gradient-orb gradient-orb-blue w-[500px] h-[500px] -bottom-20 -left-40 absolute" />

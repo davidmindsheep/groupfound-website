@@ -28,23 +28,29 @@ export function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
           scrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-border"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
+        <div
+          className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ease-in-out ${
+            scrolled ? "h-16" : "h-28 md:h-36"
+          }`}
+        >
+          <a href="/" className="flex items-center gap-3 transition-all duration-500">
             <Image
               src="/logo-animated.gif"
               alt="GroupFound"
-              width={36}
-              height={36}
+              width={80}
+              height={80}
               unoptimized
-              className="w-9 h-9"
+              className={`transition-all duration-500 ease-in-out ${
+                scrolled ? "w-9 h-9" : "w-16 h-16 md:w-20 md:h-20"
+              }`}
             />
-            <Wordmark />
+            <Wordmark className={`transition-all duration-500 ${scrolled ? "text-xl" : "text-2xl md:text-3xl"}`} />
           </a>
 
           {/* Desktop nav */}
