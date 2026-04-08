@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Logo, Wordmark } from "./Logo";
+import Image from "next/image";
+import { Wordmark } from "./Logo";
 import { Button } from "./ui/Button";
 
 const navLinks = [
@@ -35,7 +36,14 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <Logo className="w-8 h-8" />
+            <Image
+              src="/logo-animated.gif"
+              alt="GroupFound"
+              width={36}
+              height={36}
+              unoptimized
+              className="w-9 h-9"
+            />
             <Wordmark />
           </a>
 

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "./ui/Button";
+import { Logo } from "./Logo";
 
 export function Hero() {
   return (
@@ -72,28 +72,29 @@ export function Hero() {
             className="flex-shrink-0"
           >
             <div className="relative">
-              {/* Animated logo */}
-              <div className="w-[280px] md:w-[320px] flex flex-col items-center gap-6">
-                <Image
-                  src="/logo-animated.gif"
-                  alt="GroupFound animated logo"
-                  width={300}
-                  height={300}
-                  unoptimized
-                  priority
-                  className="w-[220px] h-[220px] md:w-[280px] md:h-[280px]"
-                />
-                <div className="text-center">
-                  <span className="text-2xl font-bold text-foreground">
-                    group
-                  </span>
-                  <span className="text-2xl font-light text-foreground-secondary">
-                    found
-                  </span>
+              {/* Phone frame */}
+              <div className="w-[280px] md:w-[320px] h-[560px] md:h-[640px] rounded-[48px] glass-elevated p-1.5 glow-orange">
+                <div className="w-full h-full rounded-[42px] bg-surface overflow-hidden flex items-center justify-center relative">
+                  {/* Inner glow */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-solar-orange/5 via-transparent to-eclipse-blue/5" />
+                  {/* Logo center */}
+                  <div className="relative z-10 flex flex-col items-center gap-6">
+                    <Logo className="w-24 h-24 md:w-32 md:h-32" />
+                    <div className="text-center">
+                      <span className="text-2xl font-bold text-foreground">
+                        group
+                      </span>
+                      <span className="text-2xl font-light text-foreground-secondary">
+                        found
+                      </span>
+                    </div>
+                    <p className="text-xs text-foreground-muted tracking-wider uppercase">
+                      App Coming Soon
+                    </p>
+                  </div>
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />
                 </div>
-                <p className="text-xs text-foreground-muted tracking-wider uppercase">
-                  App Coming Soon
-                </p>
               </div>
 
               {/* Floating glass elements */}
