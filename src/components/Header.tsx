@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Wordmark } from "./Logo";
 import { Button } from "./ui/Button";
 
@@ -40,16 +39,18 @@ export function Header() {
           }`}
         >
           <a href="/" className="flex items-center gap-3 transition-all duration-500">
-            <Image
-              src="/logo-animated.gif"
-              alt="GroupFound"
-              width={80}
-              height={80}
-              unoptimized
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className={`transition-all duration-500 ease-in-out ${
                 scrolled ? "w-9 h-9" : "w-16 h-16 md:w-20 md:h-20"
               }`}
-            />
+            >
+              <source src="/logo-animated.webm" type="video/webm" />
+              <source src="/logo-animated.mp4" type="video/mp4" />
+            </video>
             <Wordmark className={`transition-all duration-500 ${scrolled ? "text-xl" : "text-2xl md:text-3xl"}`} />
           </a>
 
