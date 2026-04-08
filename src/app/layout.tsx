@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "habits",
     "AI",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "GroupFound — Social Built for Growth",
     description:
