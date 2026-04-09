@@ -7,10 +7,12 @@ import { About } from "@/components/About";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
 import { SectionDots } from "@/components/SectionDots";
+import { BackgroundEffect } from "@/components/BackgroundEffect";
 
 export default function Home() {
   return (
     <>
+      <BackgroundEffect />
       <Header />
       <SectionDots />
       <main

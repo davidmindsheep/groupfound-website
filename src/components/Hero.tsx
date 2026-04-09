@@ -7,10 +7,9 @@ import { Logo } from "./Logo";
 export function Hero() {
   return (
     <section id="hero" className="relative h-screen snap-start snap-always flex items-center justify-center overflow-hidden pt-28 md:pt-36">
-      {/* Background orbs */}
-      <div className="gradient-orb gradient-orb-orange w-[600px] h-[600px] -top-40 -right-40 absolute" />
-      <div className="gradient-orb gradient-orb-blue w-[500px] h-[500px] -bottom-20 -left-40 absolute" />
-      <div className="gradient-orb gradient-orb-orange w-[300px] h-[300px] bottom-40 right-20 absolute opacity-50" />
+      {/* Background orbs (subtler — WebGL handles main ambience) */}
+      <div className="gradient-orb gradient-orb-orange w-[600px] h-[600px] -top-40 -right-40 absolute opacity-40" />
+      <div className="gradient-orb gradient-orb-blue w-[500px] h-[500px] -bottom-20 -left-40 absolute opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
