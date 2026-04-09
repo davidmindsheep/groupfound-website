@@ -28,7 +28,7 @@ const values = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
+    <section id="about" className="relative h-screen snap-start snap-always flex items-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading
           label="About"

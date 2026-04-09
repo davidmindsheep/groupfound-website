@@ -68,7 +68,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="relative py-24 md:py-32">
+    <section id="features" className="relative min-h-screen snap-start snap-always flex items-center py-24 md:py-32 overflow-hidden">
       {/* Background orb */}
       <div className="gradient-orb gradient-orb-blue w-[400px] h-[400px] top-1/4 -right-40 absolute" />
 

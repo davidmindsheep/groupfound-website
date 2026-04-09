@@ -16,9 +16,14 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const container = document.getElementById("snap-container");
+    const target = container || window;
+    const onScroll = () => {
+      const scrollTop = container ? container.scrollTop : window.scrollY;
+      setScrolled(scrollTop > 20);
+    };
+    target.addEventListener("scroll", onScroll);
+    return () => target.removeEventListener("scroll", onScroll);
   }, []);
 
   return (

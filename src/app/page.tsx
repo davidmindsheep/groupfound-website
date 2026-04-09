@@ -6,20 +6,25 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { About } from "@/components/About";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import { SectionDots } from "@/components/SectionDots";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <SectionDots />
+      <main
+        id="snap-container"
+        className="h-screen overflow-y-auto snap-y snap-mandatory"
+      >
         <Hero />
         <Problem />
         <Features />
         <HowItWorks />
         <About />
         <Waitlist />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
