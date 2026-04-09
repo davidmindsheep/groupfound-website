@@ -68,11 +68,11 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="relative min-h-screen snap-start snap-always flex items-center py-24 md:py-32 overflow-hidden">
+    <section id="features" className="relative h-screen snap-start snap-always overflow-hidden">
       {/* Background orb */}
       <div className="gradient-orb gradient-orb-blue w-[400px] h-[400px] top-1/4 -right-40 absolute" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 h-full overflow-y-auto py-24 md:py-32 scrollbar-hide">
         <SectionHeading
           label="Features"
           title="Built Different. On Purpose."
