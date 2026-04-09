@@ -33,8 +33,9 @@ export function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
             >
               Your Circle.{" "}
+              <br />
               <span className="text-gradient-orange">Your Growth.</span>{" "}
-              <br className="hidden md:block" />
+              <br />
               Your Way.
             </motion.h1>
 
