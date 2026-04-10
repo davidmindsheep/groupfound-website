@@ -25,7 +25,7 @@ export function Waitlist() {
   };
 
   return (
-    <section id="waitlist" className="relative h-screen snap-start snap-always flex items-center overflow-hidden">
+    <section id="waitlist" className="relative h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="gradient-orb gradient-orb-orange w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
       <div className="gradient-orb gradient-orb-blue w-[400px] h-[400px] bottom-0 right-1/4 absolute" />

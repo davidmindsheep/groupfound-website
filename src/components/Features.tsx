@@ -68,7 +68,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="relative h-screen snap-start snap-always overflow-hidden">
+    <section id="features" className="relative h-screen overflow-hidden">
       {/* Background orb */}
       <div className="gradient-orb gradient-orb-blue w-[400px] h-[400px] top-1/4 -right-40 absolute" />
 

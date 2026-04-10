@@ -35,7 +35,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative h-screen snap-start snap-always flex items-center overflow-hidden">
+    <section id="how-it-works" className="relative h-screen flex items-center overflow-hidden">
       <div className="gradient-orb gradient-orb-orange w-[350px] h-[350px] top-0 left-1/4 absolute" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

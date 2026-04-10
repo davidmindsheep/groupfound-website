@@ -65,7 +65,7 @@ const painPoints = [
 
 export function Problem() {
   return (
-    <section id="problem" className="relative h-screen snap-start snap-always flex items-center overflow-hidden">
+    <section id="problem" className="relative h-screen flex items-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading
           label="The Problem"

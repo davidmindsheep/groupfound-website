@@ -8,6 +8,7 @@ import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
 import { SectionDots } from "@/components/SectionDots";
 import { BackgroundEffect } from "@/components/BackgroundEffect";
+import { SnapScroll } from "@/components/SnapScroll";
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
       <BackgroundEffect />
       <Header />
       <SectionDots />
+      <SnapScroll />
       <main
         id="snap-container"
-        className="h-screen overflow-y-auto snap-y snap-mandatory"
+        className="h-screen overflow-y-auto"
       >
         <Hero />
         <Problem />
