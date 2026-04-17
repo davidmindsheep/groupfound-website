@@ -5,7 +5,6 @@ import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { About } from "@/components/About";
 import { Waitlist } from "@/components/Waitlist";
-import { Footer } from "@/components/Footer";
 import { SectionDots } from "@/components/SectionDots";
 import { BackgroundEffect } from "@/components/BackgroundEffect";
 import { SnapScroll } from "@/components/SnapScroll";
@@ -27,7 +26,6 @@ export default function Home() {
         <HowItWorks />
         <About />
         <Waitlist />
-        <Footer />
       </main>
     </>
   );

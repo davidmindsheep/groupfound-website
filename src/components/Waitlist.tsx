@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { MiniFooter } from "./MiniFooter";
 
 export function Waitlist() {
   const [email, setEmail] = useState("");
@@ -137,6 +138,7 @@ export function Waitlist() {
           </p>
         </motion.div>
       </div>
+      <MiniFooter />
     </section>
   );
 }

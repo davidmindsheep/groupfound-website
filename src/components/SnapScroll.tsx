@@ -71,22 +71,6 @@ export function SnapScroll() {
         }
       }
 
-      // Scrolling DOWN from waitlist — allow native scroll to reveal footer
-      const onLastSection = currentIndex.current === SECTION_IDS.length - 1;
-      if (e.deltaY > 0 && onLastSection) {
-        // Don't preventDefault — let the browser scroll into the footer naturally
-        return;
-      }
-
-      // Scrolling UP when past waitlist (i.e. into the footer area) —
-      // snap back up to waitlist
-      const waitlist = document.getElementById("waitlist");
-      if (waitlist && e.deltaY < 0 && container.scrollTop > waitlist.offsetTop) {
-        e.preventDefault();
-        scrollTo(SECTION_IDS.indexOf("waitlist"));
-        return;
-      }
-
       e.preventDefault();
 
       if (e.deltaY > 0) {
