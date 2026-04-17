@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const SECTION_IDS = ["hero", "problem", "features", "how-it-works", "about", "waitlist"];
+const SECTION_IDS = ["hero", "problem", "features", "how-it-works", "about", "waitlist", "footer"];
 
 export function SnapScroll() {
   const isScrolling = useRef(false);

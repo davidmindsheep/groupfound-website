@@ -932,10 +932,10 @@ export default function Privacy() {
                 <p className="text-sm">
                   Email:{" "}
                   <a
-                    href="mailto:privacy@groupfound.com"
+                    href="mailto:contact@groupfound.com"
                     className="text-solar-orange hover:underline"
                   >
-                    privacy@groupfound.com
+                    contact@groupfound.com
                   </a>
                   <br />
                   Privacy Officer: David Taylor
