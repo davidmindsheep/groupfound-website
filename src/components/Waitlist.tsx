@@ -138,7 +138,7 @@ export function Waitlist() {
           </p>
         </motion.div>
       </div>
-      <MiniFooter />
+      <MiniFooter floating />
     </section>
   );
 }

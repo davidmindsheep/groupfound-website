@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { MiniFooter } from "@/components/MiniFooter";
 
 export const metadata = {
   title: "Privacy Policy — GroupFound",
@@ -950,7 +950,7 @@ export default function Privacy() {
           </div>
         </div>
       </main>
-      <Footer />
+      <MiniFooter />
     </>
   );
 }

@@ -30,9 +30,13 @@ const socialLinks = [
   },
 ];
 
-export function MiniFooter() {
+export function MiniFooter({ floating = false }: { floating?: boolean }) {
+  const positioning = floating
+    ? "absolute bottom-0 left-0 right-0 z-20 bg-background/40 backdrop-blur-sm"
+    : "relative w-full";
+
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-20 px-6 py-4 border-t border-border bg-background/40 backdrop-blur-sm">
+    <div className={`${positioning} px-6 py-4 border-t border-border`}>
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-foreground-muted">
         <p>&copy; {new Date().getFullYear()} GroupFound Limited. All rights reserved.</p>
 
