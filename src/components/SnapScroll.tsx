@@ -16,14 +16,40 @@ export function SnapScroll() {
     const updateIndex = () => {
       const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
       const scrollTop = container.scrollTop;
-      const viewportH = container.clientHeight;
+      const maxScroll = container.scrollHeight - container.clientHeight;
 
+      // If we're at (or very close to) the bottom, we're on the footer
+      if (maxScroll - scrollTop < 4 && sections.some((s) => s.id === "footer")) {
+        currentIndex.current = SECTION_IDS.indexOf("footer");
+        return;
+      }
+
+      const viewportH = container.clientHeight;
       for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].id === "footer") continue;
         if (sections[i].offsetTop <= scrollTop + viewportH * 0.3) {
           currentIndex.current = i;
           break;
         }
       }
+    };
+
+    // Manual smooth scroll — browser's smooth scrollTo silently fails when
+    // target exceeds max, so we animate manually.
+    const animateScrollTo = (toY: number, durationMs = 600) => {
+      const startY = container.scrollTop;
+      const maxY = container.scrollHeight - container.clientHeight;
+      const endY = Math.max(0, Math.min(toY, maxY));
+      const startTime = performance.now();
+      const ease = (t: number) => 1 - Math.pow(1 - t, 3); // easeOutCubic
+
+      const step = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / durationMs);
+        container.scrollTop = startY + (endY - startY) * ease(progress);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
 
     const scrollTo = (index: number) => {
@@ -34,7 +60,12 @@ export function SnapScroll() {
       isScrolling.current = true;
       currentIndex.current = clamped;
 
-      target.scrollIntoView({ behavior: "smooth" });
+      if (SECTION_IDS[clamped] === "footer") {
+        // Scroll to the max (bottom) so the footer is fully visible
+        animateScrollTo(container.scrollHeight);
+      } else {
+        animateScrollTo(target.offsetTop);
+      }
 
       // Unlock after animation completes
       setTimeout(() => {
@@ -93,15 +124,23 @@ export function SnapScroll() {
     container.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("keydown", onKeyDown);
 
-    // Sync index on manual scroll (e.g., from dot nav clicks)
-    container.addEventListener("scrollend", updateIndex);
+    // Sync index on any scroll (debounced), covers nav clicks, keyboard, etc.
+    let scrollTimer: ReturnType<typeof setTimeout> | null = null;
+    const onScroll = () => {
+      if (scrollTimer) clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        if (!isScrolling.current) updateIndex();
+      }, 100);
+    };
+    container.addEventListener("scroll", onScroll, { passive: true });
 
     updateIndex();
 
     return () => {
       container.removeEventListener("wheel", onWheel);
       window.removeEventListener("keydown", onKeyDown);
-      container.removeEventListener("scrollend", updateIndex);
+      container.removeEventListener("scroll", onScroll);
+      if (scrollTimer) clearTimeout(scrollTimer);
     };
   }, []);
 
