@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# Claude Code local settings: saved "Don't ask again" rules can contain keys and passwords
+**/.claude/settings.local.json
+CLAUDE.local.md
